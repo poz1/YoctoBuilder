@@ -6,13 +6,11 @@ RUN apt-get update && apt-get install -y \
     chrpath socat cpio python python3 python3-pip python3-pexpect xz-utils \
     debianutils iputils-ping libsdl1.2-dev xterm
 
-RUN apt -y install locales && \
-    dpkg-reconfigure locales && \
-    locale-gen en_US.UTF-8 && \
-    update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-  
-ENV LC_ALL=en_US.UTF-8
-ENV LANG=en_US.UTF-8
-ENV LANGUAGE=en_US.UTF-8
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
-USER root
+RUN useradd -ms /bin/bash yoctobuilder
+USER yoctobuilder
+WORKDIR /home/yoctobuilder
