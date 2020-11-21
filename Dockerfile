@@ -4,7 +4,7 @@ FROM ubuntu:16.04
 RUN apt-get -y update && apt-get -y install \
     gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential \
     chrpath socat cpio python python3 python3-pip python3-pexpect xz-utils \
-    debianutils iputils-ping libsdl1.2-dev xterm locales
+    debianutils iputils-ping libsdl1.2-dev xterm locales sudo 
 
 RUN dpkg-reconfigure locales && \
     locale-gen en_US.UTF-8 && \
