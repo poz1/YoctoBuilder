@@ -16,6 +16,4 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 RUN adduser --system --disabled-password yoctobuilder && usermod -a -G sudo yoctobuilder
-
 USER yoctobuilder:sudo
-WORKDIR /home/yoctobuilder 
