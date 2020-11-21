@@ -14,6 +14,5 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN groupadd -r yoctobuilder && useradd --no-log-init -r -g yoctobuilder yoctobuilder
-USER yoctobuilder
+USER root
 
