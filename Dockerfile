@@ -18,6 +18,6 @@ ENV LC_ALL en_US.UTF-8
 RUN adduser --system --disabled-password yoctobuilder && usermod -a -G sudo yoctobuilder
 
 WORKDIR /home/yoctobuilder 
-RUN chown -R yoctobuilder:yoctobuilder /home/yoctobuilder 
+RUN chown -R yoctobuilder:root /home/yoctobuilder 
 RUN chmod 755 /home/yoctobuilder 
 USER yoctobuilder
