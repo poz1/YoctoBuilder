@@ -17,5 +17,5 @@ ENV LC_ALL en_US.UTF-8
 
 RUN useradd -ms /bin/bash --groups sudo yoctobuilder
 
-USER yoctobuilder
+USER root
 WORKDIR /home/yoctobuilder
