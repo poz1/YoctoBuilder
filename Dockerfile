@@ -1,7 +1,9 @@
 ARG TAG
 FROM ubuntu:16.04
 
-RUN dpkg-reconfigure -p critical dash
+RUN echo "dash dash/sh boolean false" | debconf-set-selections
+RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
+
 RUN apt-get -y update && apt-get -y install \
     gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential \
     chrpath socat cpio python python3 python3-pip python3-pexpect xz-utils \
