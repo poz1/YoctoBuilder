@@ -15,7 +15,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN useradd -g sudo yoctobuilder
+RUN useradd -ms /bin/bash --groups sudo yoctobuilder
 
 USER yoctobuilder
 WORKDIR /home/yoctobuilder
