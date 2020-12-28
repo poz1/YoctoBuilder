@@ -1,6 +1,8 @@
 ARG TAG
 FROM ubuntu:20.04
-ENV TZ=Europe/Rome
+
+ENV TZ Europe/Rome
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN echo "dash dash/sh boolean false" | debconf-set-selections
 RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
