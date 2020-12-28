@@ -1,5 +1,5 @@
 ARG TAG
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
 RUN echo "dash dash/sh boolean false" | debconf-set-selections
 RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
