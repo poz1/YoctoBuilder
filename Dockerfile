@@ -20,7 +20,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN git clone git://git.yoctoproject.org/poky && cd ~/poky && \
+RUN git clone git://git.yoctoproject.org/poky && cd ./poky && \
     git checkout -b rocko origin/dunfel && source oe-init-build-env
 
 USER root
